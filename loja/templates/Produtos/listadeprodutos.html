@@ -1,0 +1,14 @@
+{% extends "layouts.html" %}
+{% block content %}
+<div class="container">
+    <h2>Lista de Produtos</h2>
+    <a href="{{ url_for('produtos.produto') }}" class="btn btn-success">Adicionar Produto</a>
+    <ul class="list-group mt-4">
+        {% for produto in produtos %}
+        <li class="list-group-item">
+            {{ produto.descricao }} - ${{ produto.preco }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
